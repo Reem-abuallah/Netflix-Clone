@@ -31,7 +31,7 @@ class ApiServices {
 
   Future<UpcomingMovieModel> getNowPlayingMovies() async {
     endPoint = "movie/now_playing";
-    final url = "$baseUrl$endPoint$key";
+    final url = '$baseUrl$endPoint$key';
 
     final response = await http.get(Uri.parse(url));
 
@@ -64,7 +64,7 @@ class ApiServices {
 
     final response = await http.get(Uri.parse(url), headers: {
       'Authorization':
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MjMwODY3MjIwMjY1ODdkNmZlZmQwNzc0Y2VlMmZkYyIsInN1YiI6IjY2NTE2M2IyYmYwNzI3ODAxMTk2MDIxOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.B4QIEGvJrVHWJFDLAo4z1XRJ8LIBcLhDv91CyKkBry8'
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MjMwODY3MjIwMjY1ODdkNmZlZmQwNzc0Y2VlMmZkYyIsIm5iZiI6MTcyMDM0ODQ0MS4yNjk5Nywic3ViIjoiNjY1MTYzYjJiZjA3Mjc4MDExOTYwMjE5Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.wm0KA1Av4OEM5cVWm5X1wecpmypan9ye6ptKT9ciltc'
     });
 
     if (response.statusCode == 200) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_netflix/screens/download_screen.dart';
 import 'package:flutter_application_netflix/screens/homescreen.dart';
 import 'package:flutter_application_netflix/screens/newhot_screen.dart';
 import 'package:flutter_application_netflix/screens/search_screen.dart';
@@ -9,46 +8,40 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  DefaultTabController(
-      length: 4,
+    return DefaultTabController(
+      length: 3,
       child: Scaffold(
         bottomNavigationBar: Container(
           color: Colors.black,
           height: 70,
-          child: const TabBar(tabs: [
+          child: const TabBar(
+            tabs: [
               Tab(
-              icon: Icon(Icons.home),
-              text: "Home",
-            ),
-            Tab(
-              icon: Icon(Icons.search),
-              text: "Search",
-            ),
-            Tab(
-              icon: Icon(Icons.photo_library),
-              text: "New&Hot",
-            ),
+                icon: Icon(Icons.home),
+                text: "Home",
+              ),
               Tab(
-              icon: Icon(Icons.download),
-              text: "Download",
-            ),
-
-          ],
-          indicatorColor: Colors.transparent,
-          labelColor: Colors.white,
-          unselectedLabelColor: Color(0xff999999),
+                icon: Icon(Icons.search),
+                text: "Search",
+              ),
+              Tab(
+                icon: Icon(Icons.photo_library_outlined),
+                text: "New & Hot",
+              ),
+            ],
+            unselectedLabelColor: Color(0xFF999999),
+            labelColor: Colors.white,
+            indicatorColor: Colors.transparent,
           ),
         ),
-        body: const TabBarView(children: [
-          HomeScreen(), 
-           SearchScreen(),
-          NewHotScreen(),
-          DownloadScreen(),
-        
-        ],
+        body: const TabBarView(
+          children: [
+            HomeScreen(),
+            SearchScreen(),
+            NewHotScreen(),
+          ],
         ),
       ),
-
     );
   }
 }
